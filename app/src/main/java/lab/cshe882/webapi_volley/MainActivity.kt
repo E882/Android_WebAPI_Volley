@@ -39,19 +39,12 @@ class MainActivity : AppCompatActivity() {
             val request = JsonObjectRequest(Request.Method.POST, url, jsonObject,
                 Response.Listener { response ->
 
-
                     var EmpResult = Gson().fromJson(response.toString(), EmployeeResult::class.java)
                     val result = EmpResult.resultCode
 
                     for (name in EmpResult.resultMsg.withIndex()) {
                         Log.e("ResultName:==>", name.value.EmpName)
-
-
-
                     }
-
-
-
 
                     var strResp = response.toString();
                     val jsonObj: JSONObject = JSONObject(strResp)
@@ -82,7 +75,7 @@ class MainActivity : AppCompatActivity() {
             VolleySingleton.getInstance(this).addToRequestQueue(request)
 
 
-
+//            //Use StringRequest
 //            val que = Volley.newRequestQueue(this)
 //            val stringRequest = StringRequest(Request.Method.POST, url,
 //                Response.Listener<String> { response ->
